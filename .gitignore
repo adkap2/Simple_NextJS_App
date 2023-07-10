@@ -1,0 +1,5 @@
+/nextjs-flask/node_modules/
+/nextjs-flask/.pnp
+/nextjs-flask/.next/
+/nextjs-flask/.vercel/
+/nextjs-flask/.env*.local
