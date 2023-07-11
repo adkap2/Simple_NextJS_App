@@ -3,20 +3,20 @@
 import React, { useState } from 'react';
 
 export default function Page() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [message, setMessage] = useState('');
+  // const [lastName, setLastName] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevents the default form submission behavior
 
-    console.log('Form submitted');
-    console.log('First Name:', firstName);
-    console.log('Last Name:', lastName);
+    console.log('Message submitted');
+    console.log('Message:', message);
+    // console.log('Last Name:', lastName);
 
     // Create an object with the form data
     const formData = {
-      firstName,
-      lastName
+      message,
+      // lastName
     };
 
     // Send the data to the server
@@ -39,8 +39,8 @@ export default function Page() {
 
   };
   const handleReset = () => {
-    setFirstName('');
-    setLastName('');
+    setMessage('');
+    // setLastName('');
   };
 
   return (
@@ -51,14 +51,14 @@ export default function Page() {
             </label>
             <input
                 type="text"
-                id="fname"
-                name="fname"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                id="message"
+                name="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
             />
         </div>
-        <div className='flex flex-col'>
+        {/* <div className='flex flex-col'>
             <label htmlFor="lname" className="text-gray-700 font-bold">
                 Last name:
             </label>
@@ -70,7 +70,7 @@ export default function Page() {
                 onChange={(e) => setLastName(e.target.value)}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
             />
-        </div>
+        </div> */}
         <div className='flex-col'>
             <br/>
             <button type="submit" 
@@ -78,7 +78,9 @@ export default function Page() {
                  text-white font-bold py-2 px-4 rounded">
                 Submit
             </button>
-            <button type="button" onClick={handleReset} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mb-0">                Reset
+            <button type="button" onClick={handleReset}
+             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mb-0"> 
+                            Reset
             </button>
         </div>
     </form>
