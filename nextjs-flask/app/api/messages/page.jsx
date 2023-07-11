@@ -20,7 +20,7 @@ export default function Page() {
     };
 
     // Send the data to the server
-     fetch('https://jyu5m09x13.execute-api.us-west-1.amazonaws.com/prod', {
+     fetch('https://jyu5m09x13.execute-api.us-west-1.amazonaws.com/prod/messages/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
