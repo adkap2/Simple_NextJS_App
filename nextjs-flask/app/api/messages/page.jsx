@@ -46,7 +46,6 @@ export default function Page() {
   };
   const handleReset = () => {
     setMessage('');
-    // setLastName('');
   };
 
   const handleDeleteMessage = (indexString) => {
@@ -85,7 +84,13 @@ export default function Page() {
       .catch(error => {
         console.error(error);
       });
+
+
   };
+
+  const hideResponseMessages = () => {
+    setResponseMessages([]);
+  }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -128,8 +133,11 @@ export default function Page() {
           onClick={fetchMessages}
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
         >
-          Get all Response Messages
+          Get all Messages
         </button>
+        <button onClick={hideResponseMessages} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Hide all Messages
+      </button>
       </div>
       {/* Display the response messages */}
       <div className="mt-2 grid grid-cols-1 sm:grid-cols-4 md:grid-cols-3">
